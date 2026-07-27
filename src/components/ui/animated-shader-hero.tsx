@@ -401,22 +401,22 @@ const Hero = ({
 
   return (
     <div
-      className={`relative flex min-h-screen w-full items-center overflow-hidden bg-black ${className}`}
+      className={`relative flex w-full items-start overflow-x-hidden bg-black lg:min-h-screen lg:items-center ${className}`}
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 h-full w-full touch-none object-contain"
+        className="absolute inset-0 h-full w-full touch-none object-cover"
         style={{ background: 'black' }}
       />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/55 via-black/40 to-black/75" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-2 lg:gap-16">
-        <div className="animate-fade-in-up text-white">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-8 px-4 pb-12 pt-24 sm:gap-10 sm:px-6 sm:pb-16 sm:pt-28 lg:grid-cols-2 lg:gap-16 lg:pb-20 lg:pt-32">
+        <div className="animate-fade-in-up min-w-0 text-white">
           {trustBadge && (
-            <div className="mb-6 animate-fade-in-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/10 px-4 py-2 text-xs font-medium backdrop-blur-md md:text-sm">
+            <div className="mb-5 animate-fade-in-down sm:mb-6">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium backdrop-blur-md sm:px-4 sm:py-2 sm:text-sm">
                 {trustBadge.icons && (
-                  <div className="flex gap-1">
+                  <div className="flex shrink-0 gap-1">
                     {trustBadge.icons.map((icon, index) => (
                       <span key={index} className="text-emerald-300">
                         {icon}
@@ -424,31 +424,31 @@ const Hero = ({
                     ))}
                   </div>
                 )}
-                <span className="text-emerald-100">{trustBadge.text}</span>
+                <span className="truncate text-emerald-100">{trustBadge.text}</span>
               </div>
             </div>
           )}
 
           <div className="space-y-1">
-            <h1 className="font-display animate-fade-in-up animation-delay-200 text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="font-display animate-fade-in-up animation-delay-200 text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
               {headline.line1}
             </h1>
-            <h1 className="font-display animate-fade-in-up animation-delay-400 bg-gradient-to-r from-emerald-300 via-lime-300 to-teal-200 bg-clip-text text-5xl font-semibold leading-[1.05] tracking-tight text-transparent md:text-6xl lg:text-7xl">
+            <h1 className="font-display animate-fade-in-up animation-delay-400 bg-gradient-to-r from-emerald-300 via-lime-300 to-teal-200 bg-clip-text text-4xl font-semibold leading-[1.08] tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
               {headline.line2}
             </h1>
           </div>
 
-          <p className="animate-fade-in-up animation-delay-600 mt-6 max-w-xl text-lg leading-relaxed text-emerald-50/85 md:text-xl">
+          <p className="animate-fade-in-up animation-delay-600 mt-5 max-w-xl text-base leading-relaxed text-emerald-50/85 sm:mt-6 sm:text-lg md:text-xl">
             {subtitle}
           </p>
 
           {buttons && (
-            <div className="animate-fade-in-up animation-delay-800 mt-8 flex flex-wrap gap-3">
+            <div className="animate-fade-in-up animation-delay-800 mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               {buttons.primary && (
                 <button
                   type="button"
                   onClick={buttons.primary.onClick}
-                  className="rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 px-8 py-3.5 text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25"
+                  className="w-full rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 px-6 py-3.5 text-base font-semibold text-black transition-all duration-300 hover:scale-[1.02] hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25 sm:w-auto sm:px-8 sm:hover:scale-105"
                 >
                   {buttons.primary.text}
                 </button>
@@ -457,7 +457,7 @@ const Hero = ({
                 <button
                   type="button"
                   onClick={buttons.secondary.onClick}
-                  className="rounded-full border border-emerald-300/30 bg-emerald-500/10 px-8 py-3.5 text-base font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-emerald-300/50 hover:bg-emerald-500/20"
+                  className="w-full rounded-full border border-emerald-300/30 bg-emerald-500/10 px-6 py-3.5 text-base font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-emerald-300/50 hover:bg-emerald-500/20 sm:w-auto sm:px-8 sm:hover:scale-105"
                 >
                   {buttons.secondary.text}
                 </button>
@@ -466,13 +466,15 @@ const Hero = ({
           )}
 
           {stats && stats.length > 0 && (
-            <dl className="animate-fade-in-up animation-delay-800 mt-10 grid max-w-md grid-cols-3 gap-6">
+            <dl className="animate-fade-in-up animation-delay-800 mt-8 grid grid-cols-3 gap-3 sm:mt-10 sm:max-w-md sm:gap-6">
               {stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="font-display text-2xl font-semibold text-emerald-300 md:text-3xl">
+                <div key={stat.label} className="min-w-0">
+                  <dt className="font-display text-xl font-semibold text-emerald-300 sm:text-2xl md:text-3xl">
                     {stat.value}
                   </dt>
-                  <dd className="mt-1 text-xs text-emerald-100/70">{stat.label}</dd>
+                  <dd className="mt-1 text-[11px] leading-snug text-emerald-100/70 sm:text-xs">
+                    {stat.label}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -480,18 +482,20 @@ const Hero = ({
         </div>
 
         {image && (
-          <div className="animate-fade-in-up animation-delay-400 relative">
-            <div className="absolute inset-0 -rotate-3 rounded-3xl bg-gradient-to-br from-emerald-400/30 to-lime-300/20 opacity-60 blur-2xl" />
+          <div className="animate-fade-in-up animation-delay-400 relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="absolute inset-0 -rotate-3 rounded-2xl bg-gradient-to-br from-emerald-400/30 to-lime-300/20 opacity-60 blur-2xl sm:rounded-3xl" />
             <img
               src={image.src}
               alt={image.alt}
-              className="relative aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl shadow-emerald-950/40"
+              className="relative aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl shadow-emerald-950/40 sm:rounded-3xl"
             />
             {image.caption && (
-              <div className="absolute -bottom-5 -left-3 hidden rounded-2xl border border-white/15 bg-black/70 p-4 shadow-xl backdrop-blur-md md:block md:-left-4">
-                <p className="text-xs text-emerald-100/70">{image.caption.title}</p>
-                <p className="font-display text-lg font-semibold text-white">{image.caption.line}</p>
-                <p className="text-xs text-emerald-300">{image.caption.note}</p>
+              <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/15 bg-black/70 p-3 shadow-xl backdrop-blur-md sm:-bottom-5 sm:-left-4 sm:right-auto sm:max-w-[220px] sm:rounded-2xl sm:p-4 md:block">
+                <p className="text-[11px] text-emerald-100/70 sm:text-xs">{image.caption.title}</p>
+                <p className="font-display text-base font-semibold text-white sm:text-lg">
+                  {image.caption.line}
+                </p>
+                <p className="text-[11px] text-emerald-300 sm:text-xs">{image.caption.note}</p>
               </div>
             )}
           </div>

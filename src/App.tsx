@@ -75,18 +75,18 @@ function scrollTo(id: string) {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <a href="#" className="flex items-center gap-2">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+          <a href="#" className="flex min-w-0 items-center gap-2">
             <img
               src="/logo.png"
               alt="Repeat AI"
               width={36}
               height={36}
-              className="h-9 w-9 rounded-md object-cover"
+              className="h-8 w-8 shrink-0 rounded-md object-cover sm:h-9 sm:w-9"
             />
-            <span className="font-display text-xl font-semibold text-white">
+            <span className="font-display truncate text-lg font-semibold text-white sm:text-xl">
               Repeat<span className="text-emerald-300"> AI</span>
             </span>
           </a>
@@ -110,7 +110,7 @@ export default function App() {
           <button
             type="button"
             onClick={() => scrollTo('contact')}
-            className="inline-flex h-9 items-center justify-center rounded-md bg-emerald-500 px-4 text-sm font-medium text-black shadow transition hover:bg-emerald-400"
+            className="inline-flex h-9 items-center justify-center rounded-[8px] bg-emerald-500 px-3 text-sm font-medium text-black shadow transition hover:bg-emerald-400 sm:px-4"
           >
             Book a demo
           </button>
@@ -285,7 +285,7 @@ export default function App() {
 
       <footer className="border-t border-border bg-background py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:justify-start sm:text-left">
             <img
               src="/logo.png"
               alt="Repeat AI"
@@ -294,7 +294,7 @@ export default function App() {
               className="h-7 w-7 rounded-md object-cover"
             />
             <span className="font-display font-semibold text-foreground">Repeat AI</span>
-            <span>· AI procurement for Indian food services</span>
+            <span className="w-full sm:w-auto">· AI procurement for Indian food services</span>
           </div>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Repeat AI Technologies Pvt. Ltd.
