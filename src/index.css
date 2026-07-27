@@ -30,6 +30,13 @@
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
   }
+
+  button,
+  [type="button"],
+  [type="submit"],
+  [role="button"] {
+    cursor: pointer;
+  }
 }
 
 @layer utilities {
