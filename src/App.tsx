@@ -199,7 +199,7 @@ export default function App() {
               [
                 '01',
                 'Connect your kitchen',
-                'Share your menu, recipes, and current vendor list. Repeat AI models your demand in under a day.',
+                'Share your details, items required. Repeat AI models your demand in under a day.',
               ],
               [
                 '02',
