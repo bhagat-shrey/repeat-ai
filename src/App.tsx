@@ -184,14 +184,12 @@ export default function App() {
 
       <section id="how" className="bg-gradient-warm py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-xl">
-              <p className="text-sm font-medium uppercase tracking-widest text-leaf">How it works</p>
-              <h2 className="font-display mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-                Live in your kitchen by next week
-              </h2>
-            </div>
-            <p className="max-w-md text-muted-foreground">
+          <div className="max-w-xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-leaf">How it works</p>
+            <h2 className="font-display mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
+              Live in your kitchen by next week
+            </h2>
+            <p className="mt-4 max-w-md text-muted-foreground">
               No new hardware. No replacing your team. Repeat AI plugs into the way Indian kitchens
               already work.
             </p>
