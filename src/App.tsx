@@ -137,37 +137,21 @@ export default function App() {
             onClick: () => scrollTo('how'),
           },
         }}
+        stats={[
+          { value: '22%', label: 'avg. cost saved' },
+          { value: '1,200+', label: 'vendors in network' },
+          { value: '9 hrs', label: 'saved weekly' },
+        ]}
+        image={{
+          src: '/hero-ingredients-CqWvy-kU.jpg',
+          alt: 'Fresh Indian ingredients sourced through Repeat AI',
+          caption: {
+            title: "This morning's order",
+            line: 'Tomatoes · 40 kg',
+            note: 'Saved ₹1,240 vs last week',
+          },
+        }}
       />
-
-      <section className="border-t border-border bg-background py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-6 px-6">
-          {[
-            ['22%', 'avg. cost saved'],
-            ['1,200+', 'vendors in network'],
-            ['9 hrs', 'saved weekly'],
-          ].map(([stat, label]) => (
-            <div key={label} className="text-center md:text-left">
-              <p className="font-display text-3xl font-semibold text-leaf md:text-4xl">{stat}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-gradient-warm px-6 pb-20">
-        <div className="relative mx-auto max-w-5xl">
-          <img
-            src="/hero-ingredients-CqWvy-kU.jpg"
-            alt="Fresh Indian ingredients sourced through Repeat AI"
-            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-xl"
-          />
-          <div className="absolute -bottom-6 -left-2 hidden rounded-2xl border border-border bg-card p-4 shadow-lg md:block md:left-6">
-            <p className="text-xs text-muted-foreground">This morning&apos;s order</p>
-            <p className="font-display text-lg font-semibold">Tomatoes · 40 kg</p>
-            <p className="text-xs text-leaf">Saved ₹1,240 vs last week</p>
-          </div>
-        </div>
-      </section>
 
       <section id="features" className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">

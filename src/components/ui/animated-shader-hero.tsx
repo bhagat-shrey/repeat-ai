@@ -20,6 +20,19 @@ interface HeroProps {
       onClick?: () => void
     }
   }
+  stats?: {
+    value: string
+    label: string
+  }[]
+  image?: {
+    src: string
+    alt: string
+    caption?: {
+      title: string
+      line: string
+      note: string
+    }
+  }
   className?: string
 }
 
@@ -375,58 +388,67 @@ const useShaderBackground = () => {
   return canvasRef
 }
 
-const Hero = ({ trustBadge, headline, subtitle, buttons, className = '' }: HeroProps) => {
+const Hero = ({
+  trustBadge,
+  headline,
+  subtitle,
+  buttons,
+  stats,
+  image,
+  className = '',
+}: HeroProps) => {
   const canvasRef = useShaderBackground()
 
   return (
-    <div className={`relative h-screen w-full overflow-hidden bg-black ${className}`}>
+    <div
+      className={`relative flex min-h-screen w-full items-center overflow-hidden bg-black ${className}`}
+    >
       <canvas
         ref={canvasRef}
         className="absolute inset-0 h-full w-full touch-none object-contain"
         style={{ background: 'black' }}
       />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
-        {trustBadge && (
-          <div className="mb-8 animate-fade-in-down">
-            <div className="flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/10 px-6 py-3 text-sm backdrop-blur-md">
-              {trustBadge.icons && (
-                <div className="flex gap-1">
-                  {trustBadge.icons.map((icon, index) => (
-                    <span key={index} className="text-emerald-300">
-                      {icon}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <span className="text-emerald-100">{trustBadge.text}</span>
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-2 lg:gap-16">
+        <div className="animate-fade-in-up text-white">
+          {trustBadge && (
+            <div className="mb-6 animate-fade-in-down">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/10 px-4 py-2 text-xs font-medium backdrop-blur-md md:text-sm">
+                {trustBadge.icons && (
+                  <div className="flex gap-1">
+                    {trustBadge.icons.map((icon, index) => (
+                      <span key={index} className="text-emerald-300">
+                        {icon}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <span className="text-emerald-100">{trustBadge.text}</span>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        <div className="mx-auto max-w-5xl space-y-6 px-4 text-center">
-          <div className="space-y-2">
-            <h1 className="animate-fade-in-up animation-delay-200 bg-gradient-to-r from-emerald-300 via-lime-300 to-green-200 bg-clip-text text-5xl font-bold text-transparent md:text-7xl lg:text-8xl">
+          <div className="space-y-1">
+            <h1 className="font-display animate-fade-in-up animation-delay-200 text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
               {headline.line1}
             </h1>
-            <h1 className="animate-fade-in-up animation-delay-400 bg-gradient-to-r from-lime-200 via-emerald-300 to-teal-300 bg-clip-text text-5xl font-bold text-transparent md:text-7xl lg:text-8xl">
+            <h1 className="font-display animate-fade-in-up animation-delay-400 bg-gradient-to-r from-emerald-300 via-lime-300 to-teal-200 bg-clip-text text-5xl font-semibold leading-[1.05] tracking-tight text-transparent md:text-6xl lg:text-7xl">
               {headline.line2}
             </h1>
           </div>
 
-          <div className="animate-fade-in-up animation-delay-600 mx-auto max-w-3xl">
-            <p className="text-lg font-light leading-relaxed text-emerald-100/90 md:text-xl lg:text-2xl">
-              {subtitle}
-            </p>
-          </div>
+          <p className="animate-fade-in-up animation-delay-600 mt-6 max-w-xl text-lg leading-relaxed text-emerald-50/85 md:text-xl">
+            {subtitle}
+          </p>
 
           {buttons && (
-            <div className="animate-fade-in-up animation-delay-800 mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <div className="animate-fade-in-up animation-delay-800 mt-8 flex flex-wrap gap-3">
               {buttons.primary && (
                 <button
                   type="button"
                   onClick={buttons.primary.onClick}
-                  className="rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 px-8 py-4 text-lg font-semibold text-black transition-all duration-300 hover:scale-105 hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25"
+                  className="rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 px-8 py-3.5 text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25"
                 >
                   {buttons.primary.text}
                 </button>
@@ -435,14 +457,45 @@ const Hero = ({ trustBadge, headline, subtitle, buttons, className = '' }: HeroP
                 <button
                   type="button"
                   onClick={buttons.secondary.onClick}
-                  className="rounded-full border border-emerald-300/30 bg-emerald-500/10 px-8 py-4 text-lg font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-emerald-300/50 hover:bg-emerald-500/20"
+                  className="rounded-full border border-emerald-300/30 bg-emerald-500/10 px-8 py-3.5 text-base font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-emerald-300/50 hover:bg-emerald-500/20"
                 >
                   {buttons.secondary.text}
                 </button>
               )}
             </div>
           )}
+
+          {stats && stats.length > 0 && (
+            <dl className="animate-fade-in-up animation-delay-800 mt-10 grid max-w-md grid-cols-3 gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="font-display text-2xl font-semibold text-emerald-300 md:text-3xl">
+                    {stat.value}
+                  </dt>
+                  <dd className="mt-1 text-xs text-emerald-100/70">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
+
+        {image && (
+          <div className="animate-fade-in-up animation-delay-400 relative">
+            <div className="absolute inset-0 -rotate-3 rounded-3xl bg-gradient-to-br from-emerald-400/30 to-lime-300/20 opacity-60 blur-2xl" />
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="relative aspect-[4/3] w-full rounded-3xl object-cover shadow-2xl shadow-emerald-950/40"
+            />
+            {image.caption && (
+              <div className="absolute -bottom-5 -left-3 hidden rounded-2xl border border-white/15 bg-black/70 p-4 shadow-xl backdrop-blur-md md:block md:-left-4">
+                <p className="text-xs text-emerald-100/70">{image.caption.title}</p>
+                <p className="font-display text-lg font-semibold text-white">{image.caption.line}</p>
+                <p className="text-xs text-emerald-300">{image.caption.note}</p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
