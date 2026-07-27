@@ -139,7 +139,7 @@ export default function App() {
         }}
         stats={[
           { value: '22%', label: 'avg. cost saved' },
-          { value: '1,200+', label: 'vendors in network' },
+          { value: '1,200+', label: 'outlets and vendors' },
           { value: '9 hrs', label: 'saved weekly' },
         ]}
         image={{
