@@ -101,7 +101,7 @@ export default function App() {
                 key={id}
                 type="button"
                 onClick={() => scrollTo(id)}
-                className="text-sm text-emerald-100/70 transition-colors hover:text-white"
+                className="text-sm cursor-pointer text-emerald-100/70 transition-colors hover:text-white"
               >
                 {label}
               </button>
@@ -110,7 +110,7 @@ export default function App() {
           <button
             type="button"
             onClick={() => scrollTo('contact')}
-            className="inline-flex h-9 items-center justify-center rounded-[8px] bg-emerald-500 px-3 text-sm font-medium text-black shadow transition hover:bg-emerald-400 sm:px-4"
+            className="inline-flex h-9 cursor-pointer items-center justify-center rounded-[8px] bg-emerald-500 px-3 text-sm font-medium text-black shadow transition hover:bg-emerald-400 sm:px-4"
           >
             Book a demo
           </button>
@@ -270,7 +270,7 @@ export default function App() {
             />
             <button
               type="submit"
-              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[8px] bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
+              className="inline-flex h-12 shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[8px] bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
             >
               Request demo <ArrowRight className="h-4 w-4" />
             </button>
