@@ -158,7 +158,7 @@ export default function App() {
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-widest text-leaf">Features</p>
             <h2 className="font-display mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-              A procurement team that never sleeps.
+              A procurement team that never sleeps
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Built for the messy reality of Indian food supply chains — fragmented vendors, daily
@@ -171,8 +171,8 @@ export default function App() {
                 key={title}
                 className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-leaf transition-colors group-hover:bg-gradient-hero group-hover:text-primary-foreground">
-                  <Icon className="h-5 w-5" />
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-leaf transition-colors group-hover:bg-primary/15">
+                  <Icon className="h-5 w-5 text-leaf" />
                 </div>
                 <h3 className="font-display mt-5 text-xl font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
@@ -188,7 +188,7 @@ export default function App() {
             <div className="max-w-xl">
               <p className="text-sm font-medium uppercase tracking-widest text-leaf">How it works</p>
               <h2 className="font-display mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-                Live in your kitchen by next week.
+                Live in your kitchen by next week
               </h2>
             </div>
             <p className="max-w-md text-muted-foreground">
@@ -229,7 +229,7 @@ export default function App() {
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-widest text-leaf">Built for</p>
             <h2 className="font-display mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-              Every kind of Indian kitchen.
+              Every kind of Indian kitchen
             </h2>
           </div>
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -252,7 +252,7 @@ export default function App() {
         <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,white_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="relative mx-auto max-w-4xl px-6 text-center text-primary-foreground">
           <h2 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
-            Ready to slash your food costs?
+            Ready to slash your food costs and save hours?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
             Book a 20-minute demo. We&apos;ll plug Repeat AI into one of your outlets and show you
@@ -268,17 +268,17 @@ export default function App() {
               type="email"
               required
               placeholder="you@kitchen.com"
-              className="h-12 w-full rounded-[8px] border border-white/30 bg-white/10 px-3 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-1 focus:ring-white"
+              className="h-12 min-w-0 w-full rounded-[8px] border border-white/30 bg-white/10 px-3 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-1 focus:ring-white"
             />
             <button
               type="submit"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-[8px] bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
+              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[8px] bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
             >
               Request demo <ArrowRight className="h-4 w-4" />
             </button>
           </form>
           <p className="mt-4 text-xs text-primary-foreground/70">
-            Trusted by chefs in Mumbai, Bengaluru, Delhi & Hyderabad.
+            Trusted by 50+ customers.
           </p>
         </div>
       </section>
