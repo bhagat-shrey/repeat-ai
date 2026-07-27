@@ -126,7 +126,7 @@ export default function App() {
           line1: 'Source smarter.',
           line2: 'Cook freer.',
         }}
-        subtitle="Repeat AI is an AI procurement agent that negotiates, orders, and tracks ingredients for restaurants, cloud kitchens, hotels, and caterers across India — cutting food costs by up to 22%."
+        subtitle="Repeat AI is an AI procurement agent that negotiates, orders, and tracks ingredients for restaurants, cloud kitchens, hotels, and caterers across India."
         buttons={{
           primary: {
             text: 'Book a demo',
