@@ -268,11 +268,11 @@ export default function App() {
               type="email"
               required
               placeholder="you@kitchen.com"
-              className="h-12 w-full rounded-md border border-white/30 bg-white/10 px-3 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-1 focus:ring-white"
+              className="h-12 w-full rounded-[8px] border border-white/30 bg-white/10 px-3 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-1 focus:ring-white"
             />
             <button
               type="submit"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-[8px] bg-secondary px-8 text-sm font-medium text-foreground shadow-sm transition hover:bg-secondary/80"
             >
               Request demo <ArrowRight className="h-4 w-4" />
             </button>

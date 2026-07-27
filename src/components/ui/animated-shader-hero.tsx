@@ -448,7 +448,7 @@ const Hero = ({
                 <button
                   type="button"
                   onClick={buttons.primary.onClick}
-                  className="w-full rounded-full bg-gradient-to-r from-emerald-500 to-lime-500 px-6 py-3.5 text-base font-semibold text-black transition-all duration-300 hover:scale-[1.02] hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25 sm:w-auto sm:px-8 sm:hover:scale-105"
+                  className="w-full rounded-[8px] bg-gradient-to-r from-emerald-500 to-lime-500 px-6 py-3.5 text-base font-semibold text-black transition-all duration-300 hover:scale-[1.02] hover:from-emerald-400 hover:to-lime-400 hover:shadow-xl hover:shadow-emerald-500/25 sm:w-auto sm:px-8 sm:hover:scale-105"
                 >
                   {buttons.primary.text}
                 </button>
@@ -457,7 +457,7 @@ const Hero = ({
                 <button
                   type="button"
                   onClick={buttons.secondary.onClick}
-                  className="w-full rounded-full border border-emerald-300/30 bg-emerald-500/10 px-6 py-3.5 text-base font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-emerald-300/50 hover:bg-emerald-500/20 sm:w-auto sm:px-8 sm:hover:scale-105"
+                  className="w-full rounded-[8px] border border-emerald-300/30 bg-emerald-500/10 px-6 py-3.5 text-base font-semibold text-emerald-100 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-emerald-300/50 hover:bg-emerald-500/20 sm:w-auto sm:px-8 sm:hover:scale-105"
                 >
                   {buttons.secondary.text}
                 </button>
