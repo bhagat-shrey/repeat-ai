@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import {
   ArrowRight,
   Bot,
@@ -76,6 +77,7 @@ function scrollTo(id: string) {
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <Analytics />
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
           <a href="#" className="flex min-w-0 items-center gap-2">
